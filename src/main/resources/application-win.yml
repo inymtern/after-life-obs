@@ -1,0 +1,30 @@
+server:
+  port: 9903
+  servlet:
+    context-path: /obs
+spring:
+  config:
+    import: config.yml
+  cloud:
+    nacos:
+      server-addr: ${nacos.address}
+  application:
+    name: obsApp
+  aop:
+    auto: true
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+config:
+  upload:
+    path: ${upload.path}
+  gateway:
+    address: ${gateway.address}
+  tinyPng:
+    key: ${tinyPng.key}
+  cos:
+    bucket: ${cos.bucket}
+    sid: ${cos.secretId}
+    skey: ${cos.secretKey}
+    address: ${cos.address}
